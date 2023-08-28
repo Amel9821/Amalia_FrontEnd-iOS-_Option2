@@ -1,0 +1,6 @@
+framework module Pods_Amalia_FrontEnd_iOS__Option2 {
+  umbrella header "Pods-Amalia_FrontEnd(iOS)_Option2-umbrella.h"
+
+  export *
+  module * { export * }
+}
