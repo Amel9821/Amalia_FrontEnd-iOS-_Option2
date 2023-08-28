@@ -14,7 +14,6 @@
 		43C4F7B62A97C3EA00CE69E0 /* SourceListEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43C4F7B52A97C3EA00CE69E0 /* SourceListEntity.swift */; };
 		43C4F7B82A97C41900CE69E0 /* ArticleListEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43C4F7B72A97C41900CE69E0 /* ArticleListEntity.swift */; };
 		43C4F7BC2A97E22000CE69E0 /* Constanta.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43C4F7BB2A97E22000CE69E0 /* Constanta.swift */; };
-		43C4F7BE2A97E26400CE69E0 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43C4F7BD2A97E26400CE69E0 /* Helper.swift */; };
 		43C4F7C22A97E69300CE69E0 /* ArticleListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43C4F7C12A97E69300CE69E0 /* ArticleListView.swift */; };
 		43C4F7C42A97E6AE00CE69E0 /* SourceListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43C4F7C32A97E6AE00CE69E0 /* SourceListInteractor.swift */; };
 		43C4F7C62A97E6C000CE69E0 /* ArticleListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43C4F7C52A97E6C000CE69E0 /* ArticleListInteractor.swift */; };
@@ -54,7 +53,6 @@
 		43C4F7B52A97C3EA00CE69E0 /* SourceListEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SourceListEntity.swift; sourceTree = "<group>"; };
 		43C4F7B72A97C41900CE69E0 /* ArticleListEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleListEntity.swift; sourceTree = "<group>"; };
 		43C4F7BB2A97E22000CE69E0 /* Constanta.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constanta.swift; sourceTree = "<group>"; };
-		43C4F7BD2A97E26400CE69E0 /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
 		43C4F7C12A97E69300CE69E0 /* ArticleListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleListView.swift; sourceTree = "<group>"; };
 		43C4F7C32A97E6AE00CE69E0 /* SourceListInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SourceListInteractor.swift; sourceTree = "<group>"; };
 		43C4F7C52A97E6C000CE69E0 /* ArticleListInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleListInteractor.swift; sourceTree = "<group>"; };
@@ -161,7 +159,6 @@
 			children = (
 				43C4F7DE2A98265E00CE69E0 /* Dependency-Injection */,
 				43C4F7BB2A97E22000CE69E0 /* Constanta.swift */,
-				43C4F7BD2A97E26400CE69E0 /* Helper.swift */,
 				43C4F7E52A98280400CE69E0 /* WebService.swift */,
 			);
 			path = Utilities;
@@ -336,7 +333,6 @@
 				43C4F7E02A98268300CE69E0 /* DependencyKey.swift in Sources */,
 				43C4F7E42A9827BA00CE69E0 /* Dependency.swift in Sources */,
 				43EEBD952A9C67F000B4A563 /* CategoryItem.swift in Sources */,
-				43C4F7BE2A97E26400CE69E0 /* Helper.swift in Sources */,
 				43C4F7C82A97E6CE00CE69E0 /* SourceListPresenter.swift in Sources */,
 				43C4F7C62A97E6C000CE69E0 /* ArticleListInteractor.swift in Sources */,
 				43EEBD972A9C67FB00B4A563 /* CategoryDataSource.swift in Sources */,
