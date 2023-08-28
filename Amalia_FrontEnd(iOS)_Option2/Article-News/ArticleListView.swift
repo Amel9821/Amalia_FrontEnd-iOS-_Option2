@@ -100,7 +100,7 @@ final class ArticleListView: UIViewController, UISearchBarDelegate {
         globalPage = 1
         view.backgroundColor = .systemBackground
         spinner.startAnimating()
-        presenter?.startFetchArticleList()
+        presenter?.startFetchArticleList(sourceID: globalSource)
     }
     
     private func setupSnapshot(_ list: [ArticleResultEntity]) {
@@ -114,7 +114,7 @@ final class ArticleListView: UIViewController, UISearchBarDelegate {
     
     @objc func didSearch() {
         globalSearchArticles = searchBar.text ?? ""
-        presenter?.startFetchArticleList()
+        presenter?.startFetchArticleList(sourceID: globalSource)
     }
     
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
@@ -129,7 +129,7 @@ final class ArticleListView: UIViewController, UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         globalSearchArticles = searchBar.text ?? ""
         globalPage = 1
-        presenter?.startFetchArticleList()
+        presenter?.startFetchArticleList(sourceID: globalSource)
     }
     
     @objc func doneAction() {
@@ -167,8 +167,6 @@ extension ArticleListView: UITableViewDelegate {
 extension ArticleListView: UIScrollViewDelegate {
     func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
         if ((scrollView.contentOffset.y + scrollView.frame.size.height) >= scrollView.contentSize.height) {
-            globalPage += 1
-            presenter?.startFetchArticleList()
             spinner.stopAnimating()
             tableView.tableFooterView?.isHidden = true
         }

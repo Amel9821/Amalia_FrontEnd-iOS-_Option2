@@ -17,5 +17,5 @@ var screenWidth = UIScreen.main.bounds.width
 var screenHeight = UIScreen.main.bounds.height
 var LinkWebsite = "https://newsapi.org/v2/top-headlines/sources?"
 var LinkWebsiteArticles = "https://newsapi.org/v2/top-headlines?"
-var apiKey = "30341df10b874b52971497db83e2e622"
+var apiKey = "cc3979222e184f3bb7629e1aaaba3002"
 var globalPage = 0

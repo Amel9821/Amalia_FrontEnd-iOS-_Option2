@@ -14,7 +14,7 @@ protocol ArticleListViewToPresenterProtocol: AnyObject {
     var router: ArticleListPresenterToRouterProtocol? { get set }
     var articleList: CurrentValueSubject<ArticleListEntity?, NSError>! { get set }
     
-    func startFetchArticleList()
+    func startFetchArticleList(sourceID: String)
     func showArticleDetail(indexPathRow: Int, navigationController: UINavigationController)
     func backToMovieList(navigationController: UINavigationController)
 }

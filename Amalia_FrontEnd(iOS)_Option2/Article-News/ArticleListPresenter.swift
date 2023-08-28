@@ -27,7 +27,7 @@ final class ArticleListPresenter: ArticleListViewToPresenterProtocol {
         view?.observeArticleList(subject: articleList)
     }
     
-    func startFetchArticleList() {
+    func startFetchArticleList(sourceID: String) {
         interactor?.fetchArticleList(sourceID: sourceID)
     }
     

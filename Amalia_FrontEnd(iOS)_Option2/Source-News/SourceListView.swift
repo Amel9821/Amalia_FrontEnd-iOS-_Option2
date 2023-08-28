@@ -19,6 +19,15 @@ final class SourceListView: UIViewController, UISearchBarDelegate {
         return tableView
     }()
     
+    private var totalSource: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.numberOfLines = 1
+        label.font = .systemFont(ofSize: 12, weight: .semibold)
+        label.frame = CGRectMake(15, 130, 30, 30)
+        return label
+    }()
+    
     private var searchBar: UISearchBar = {
         let searchBar = UISearchBar()
         searchBar.frame = CGRectMake(25, 100, screenWidth - 18, 37)
@@ -70,7 +79,7 @@ final class SourceListView: UIViewController, UISearchBarDelegate {
         NSLayoutConstraint.activate([
             tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            tableView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 50),
+            tableView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 80),
             tableView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
         ])
         
