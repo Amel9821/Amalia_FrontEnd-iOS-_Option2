@@ -25,7 +25,11 @@ class CategoryListRouter: CategoryRouterProtocol {
     
     func presentCategoryDetailScreen(from view: CategoryViewProtocol, for category: CategoryItem) {
         let sourceListVC = SourceListRouter.createModule(category: category.title)
-        globalCategory = category.title
+        if category.title.lowercased() == "all categories" {
+            globalCategory = ""
+        } else {
+            globalCategory = category.title
+        }
         guard let viewVC = view as? UIViewController else {
             fatalError("Invalid View Protocol type")
         }

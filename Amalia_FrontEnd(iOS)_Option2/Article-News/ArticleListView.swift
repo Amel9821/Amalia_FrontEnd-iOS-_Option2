@@ -27,7 +27,7 @@ final class ArticleListView: UIViewController, UISearchBarDelegate {
         searchBar.searchTextField.textColor = .gray
         searchBar.searchTextField.leftView?.tintColor = .darkGray
         searchBar.barTintColor = .white
-        searchBar.searchTextField.backgroundColor = .lightGray
+        searchBar.searchTextField.backgroundColor = .white
         searchBar.searchTextField.layer.cornerRadius = searchBar.frame.height / 2
         searchBar.searchTextField.layer.masksToBounds = true
         searchBar.tintColor = .white
@@ -76,8 +76,7 @@ final class ArticleListView: UIViewController, UISearchBarDelegate {
         toolbar.sizeToFit()
         let cancelButton = UIBarButtonItem(title: "Cancel", style: .plain, target: self, action: #selector(doneAction));
         let space = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.flexibleSpace, target: nil, action: nil)
-        //let searchButton = UIBarButtonItem(title: "Search", style: .plain, target: self, action: #selector(searchAction));
-        toolbar.setItems([space,space, cancelButton], animated: false)
+        toolbar.setItems([space, cancelButton], animated: false)
         
         searchBar.delegate = self
         searchBar.searchTextField.inputAccessoryView = toolbar
@@ -100,6 +99,7 @@ final class ArticleListView: UIViewController, UISearchBarDelegate {
         title = "\(globalSource) Articles".uppercased()
         globalPage = 1
         view.backgroundColor = .systemBackground
+        spinner.startAnimating()
         presenter?.startFetchArticleList()
     }
     
@@ -167,10 +167,10 @@ extension ArticleListView: UITableViewDelegate {
 extension ArticleListView: UIScrollViewDelegate {
     func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
         if ((scrollView.contentOffset.y + scrollView.frame.size.height) >= scrollView.contentSize.height) {
-            spinner.startAnimating()
-            tableView.tableFooterView?.isHidden = false
             globalPage += 1
             presenter?.startFetchArticleList()
+            spinner.stopAnimating()
+            tableView.tableFooterView?.isHidden = true
         }
     }
 }

@@ -26,6 +26,4 @@ extension CategoryListPresenter: CategoryInteractorOutputProtocol {
     func didRetrieveCategory(_ category: [CategoryItem]) {
         view?.showCategory(category)
     }
-    
-    
 }

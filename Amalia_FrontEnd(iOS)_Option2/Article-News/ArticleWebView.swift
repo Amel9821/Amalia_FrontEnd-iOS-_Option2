@@ -13,7 +13,7 @@ class ArticleWebView: UIViewController, WKNavigationDelegate {
 
     let webView = WKWebView()
     let isAllowZoom: Bool = true
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

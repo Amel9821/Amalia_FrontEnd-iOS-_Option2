@@ -28,7 +28,7 @@ final class SourceListView: UIViewController, UISearchBarDelegate {
         searchBar.searchTextField.textColor = .gray
         searchBar.searchTextField.leftView?.tintColor = .darkGray
         searchBar.barTintColor = .white
-        searchBar.searchTextField.backgroundColor = .lightGray
+        searchBar.searchTextField.backgroundColor = .white
         searchBar.searchTextField.layer.cornerRadius = searchBar.frame.height / 2
         searchBar.searchTextField.layer.masksToBounds = true
         searchBar.tintColor = .white
@@ -78,8 +78,7 @@ final class SourceListView: UIViewController, UISearchBarDelegate {
         toolbar.sizeToFit()
         let cancelButton = UIBarButtonItem(title: "Cancel", style: .plain, target: self, action: #selector(doneAction));
         let space = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.flexibleSpace, target: nil, action: nil)
-        //let searchButton = UIBarButtonItem(title: "Search", style: .plain, target: self, action: #selector(searchAction));
-        toolbar.setItems([space,space, cancelButton], animated: false)
+        toolbar.setItems([space, cancelButton], animated: false)
         
         searchBar.delegate = self
         searchBar.searchTextField.inputAccessoryView = toolbar
@@ -102,6 +101,7 @@ final class SourceListView: UIViewController, UISearchBarDelegate {
         title = "\(globalCategory) Source".uppercased()
         globalPage = 1
         view.backgroundColor = .systemBackground
+        spinner.startAnimating()
         presenter?.startFetchSourceList(category: globalCategory)
     }
     
@@ -167,10 +167,11 @@ extension SourceListView: UITableViewDelegate {
 extension SourceListView: UIScrollViewDelegate {
     func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
         if ((scrollView.contentOffset.y + scrollView.frame.size.height) >= scrollView.contentSize.height) {
-            spinner.startAnimating()
-            tableView.tableFooterView?.isHidden = false
+            print("hehe")
             globalPage += 1
             presenter?.startFetchSourceList(category: globalCategory)
+            spinner.stopAnimating()
+            tableView.tableFooterView?.isHidden = true
         }
     }
 }
